@@ -6,13 +6,13 @@ describe('Transaction', function() {
   });
 
   it('has a type', function() {
-    expect(transaction.type).toEqual('credit');
+    expect(transaction._type).toEqual('credit');
   });
   it('has an amount', function() {
-    expect(transaction.amount).toEqual(250);
+    expect(transaction._amount).toEqual(250);
   });
   it('has an date', function() {
-    expect(transaction.date).toEqual(new Date('Sep 23 2019'));
+    expect(transaction._date).toEqual(new Date('Sep 23 2019'));
   });
 
 });

@@ -1,5 +1,10 @@
-function Transaction(type, amount, date) {
-  this.type = type
-  this.amount = amount
-  this.date = date
-};
+(function(exports) {
+
+  function Transaction(type, amount, date) {
+    this._type = type
+    this._amount = amount
+    this._date = date
+  };
+
+  exports.Transaction = Transaction
+})(this);
