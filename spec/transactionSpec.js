@@ -2,7 +2,7 @@ describe('Transaction', function() {
 
   beforeEach(function() {
     let transDate = new Date('Sep 23 2019')
-    transaction = new Transaction('credit',250,new Date());
+    transaction = new Transaction('credit',250,transDate);
   });
 
   it('has a type', function() {
@@ -11,4 +11,8 @@ describe('Transaction', function() {
   it('has an amount', function() {
     expect(transaction.amount).toEqual(250);
   });
+  it('has an date', function() {
+    expect(transaction.date).toEqual(new Date('Sep 23 2019'));
+  });
+
 });
