@@ -1,6 +1,7 @@
-function Account() {
+function Account(balance=0) {
+  this._balance = balance
 };
 
 Account.prototype.balance = function() {
-  return 0;
+  return this._balance;
 };
