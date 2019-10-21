@@ -31,12 +31,12 @@ acc.deposit(500)
 acc.balance() - balance is 3500
 acc.withdraw(250)
 acc.balance() - balance is 3250
-acc.statement - holds transactions and prints them
+statement(acc) - gets transactions from the account and prints them
 
 ## Domain model
 
 ****
 ```sequence {theme="hand"}
-Account->Transaction: has
+Account->Transaction: has array of
 Statement->Transaction: prints list of
 ```
