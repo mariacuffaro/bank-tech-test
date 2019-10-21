@@ -21,3 +21,22 @@ date || credit || debit || balance
 13/01/2012 || 2000.00 || || 3000.00
 10/01/2012 || 1000.00 || || 1000.00
 ```
+
+## Approach
+
+Test Driving Code in the console...
+
+acc = new Account(3000) - balance is 3000
+acc.deposit(500)
+acc.balance() - balance is 3500
+acc.withdraw(250)
+acc.balance() - balance is 3250
+acc.statement - holds transactions and prints them
+
+## Domain model
+
+****
+```sequence {theme="hand"}
+Account->Transaction: has
+Statement->Transaction: prints list of
+```
