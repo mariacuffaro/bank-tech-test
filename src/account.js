@@ -1,19 +1,27 @@
 (function(exports) {
 
+  transactions = []
+  accBalance = 0;
+
   function Account(balance=0) {
-    this._balance = balance
+    accBalance = balance;
+    transactions = [];
   };
 
   Account.prototype.balance = function() {
-    return this._balance;
+    return accBalance;
   };
 
   Account.prototype.deposit = function(amount) {
-    this._balance += amount;
+    accBalance += amount;
+    transaction = new Transaction('credit',amount,new Date(),accBalance);
+    transactions.push(transaction);
   };
 
   Account.prototype.withdraw = function(amount) {
-    this._balance -= amount;
+    accBalance -= amount;
+    transaction = new Transaction('debit',amount,new Date(),accBalance);
+    transactions.push(transaction)
   };
 
   exports.Account = Account

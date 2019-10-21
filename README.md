@@ -31,7 +31,7 @@ acc.deposit(500)
 acc.balance() - balance is 3500
 acc.withdraw(250)
 acc.balance() - balance is 3250
-statement(acc) - gets transactions from the account and prints them
+acc.statement - gets transactions from the account and prints them
 
 ## Domain model
 
