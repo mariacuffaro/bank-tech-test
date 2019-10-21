@@ -13,4 +13,9 @@ describe('Account', function() {
     account.deposit(250);
     expect(account.balance()).toEqual(3250);
   });
+  it('can have money withdrawn from it', function(){
+    account = new Account(3000);
+    account.withdraw(250);
+    expect(account.balance()).toEqual(2750);
+  });
 });
