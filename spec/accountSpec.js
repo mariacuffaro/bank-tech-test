@@ -18,4 +18,9 @@ describe('Account', function() {
     account.withdraw(250);
     expect(account.balance()).toEqual(2750);
   });
+  it('can print statement', function(){
+    account = new Account();
+    expect(account.statement()).toEqual("date || credit || debit || balance")
+  })
+
 });

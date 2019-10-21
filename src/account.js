@@ -23,6 +23,9 @@
     transaction = new Transaction('debit',amount,new Date(),accBalance);
     transactions.push(transaction)
   };
+  Account.prototype.statement = function() {
+    return 'date || credit || debit || balance';
+  };
 
   exports.Account = Account
 })(this);
