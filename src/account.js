@@ -5,3 +5,7 @@ function Account(balance=0) {
 Account.prototype.balance = function() {
   return this._balance;
 };
+
+Account.prototype.deposit = function(amount) {
+  this._balance += amount;
+};
