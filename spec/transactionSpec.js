@@ -1,7 +1,7 @@
 describe('Transaction', function() {
 
   beforeEach(function() {
-    let transDate = new Date('Sep 23 2019')
+    transDate = new Date('Sep 23 2019')
     transaction = new Transaction('credit',250,transDate, 2000);
   });
 
@@ -22,7 +22,7 @@ describe('Transaction', function() {
     expect(transOutput).toEqual('23/09/2019 || 250.00 || || 2000.00')
   });
   it('calculates a transaction string for a withdrawal', function(){
-    let transDate = new Date('Sep 23 2019')
+    // let transDate = new Date('Sep 23 2019')
     anotherTrans = new Transaction('debit',500,transDate, 500);
     transOutput = anotherTrans.render();
     expect(transOutput).toEqual('23/09/2019 || || 500.00 || 500.00')

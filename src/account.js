@@ -25,9 +25,12 @@
   };
   Account.prototype.statement = function() {
     statementHeader = "date || credit || debit || balance\n";
-    statementBody = "21/10/2019 || || 250.00 || 2750.00";
+    statementBody = '';
     if (transactions.length == 0) { return `${statementHeader}` }
-    return `${statementHeader} ${statementBody}`
+    transactions.forEach(function (transaction) {
+        statementBody += `${transaction.render()}\n`;
+    });
+    return `${statementHeader}${statementBody.slice(0, -1)}`
   };
 
   exports.Account = Account
