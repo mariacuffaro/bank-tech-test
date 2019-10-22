@@ -34,10 +34,18 @@ describe('Account', function() {
     str = str.replace(/[^a-zA-Z]/g, "");
     statement = account.statement();
     statement = statement.replace(/[^a-zA-Z]/g, "");
-
-    console.log(str);
-    console.log(statement);
-
+    expect(statement).toEqual(str);
+  })
+  it('can print statement for account with two transactions', function(){
+    account = new Account(3000);
+    account.withdraw(250);
+    account.deposit(500);
+    statementHeader = "date || credit || debit || balance";
+    statementBody = "21/10/2019 || || 250.00 || 2750.00 21/10/2019 || 500.00 || || 3250.00";
+    str = `${statementHeader} ${statementBody}`
+    str = str.replace(/[^a-zA-Z]/g, "");
+    statement = account.statement();
+    statement = statement.replace(/[^a-zA-Z]/g, "");
     expect(statement).toEqual(str);
   })
 });

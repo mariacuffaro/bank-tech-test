@@ -7,5 +7,11 @@
     this._balance = balance
   };
 
+  Transaction.prototype.render = function(){
+    let formattedDate = moment(this._date).format('DD/MM/YYYY');
+    if (this._type == 'credit') {return `${formattedDate} || ${this._amount.toFixed(2)} || || ${this._balance.toFixed(2)}`}
+    return `${formattedDate} || || ${this._amount.toFixed(2)} || ${this._balance.toFixed(2)}`
+  };
+
   exports.Transaction = Transaction
 })(this);
