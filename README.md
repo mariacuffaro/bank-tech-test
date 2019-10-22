@@ -31,7 +31,8 @@ acc.deposit(500)
 acc.balance() - balance is 3500
 acc.withdraw(250)
 acc.balance() - balance is 3250
-acc.statement - gets transactions from the account and prints them
+acc.statement() - gets transactions from the account and prints t
+
 
 ## Domain model
 
@@ -40,3 +41,11 @@ acc.statement - gets transactions from the account and prints them
 Account->Transaction: has array of
 Statement->Transaction: prints list of
 ```
+
+## Terminal instructions for downloading and running the app
+
+* git clone git@github.com:mariacuffaro/bank-tech-test.git
+* npm install
+* cd to project folder
+* open index.html to run the app
+* open SpecRunner.html to run the tests

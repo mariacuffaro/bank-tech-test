@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>BankTechTest</title>
+  <!-- include source files here... -->
+  <script src="node_modules/moment/moment.js"></script>
+  <script src="src/transaction.js"></script>
+  <script src="src/account.js"></script>
+  <script src="src/statement.js"></script>
+</head>
+<body>
+  <h1>Welcome to the Bank</h1>
+  <div><h2>Open the console to create a new account</h2></div>
+  acc = new Account(3000) - will create a account with an opening balance of 3000</br>
+  acc.deposit(500) - to deposit 500</br>
+  acc.balance() - will show your balance</br>
+  acc.withdraw(250) - to withdraw 250</br>
+  acc.statement() - gets all transactions and prints to the console
+</body>
+</html>

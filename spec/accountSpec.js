@@ -22,7 +22,7 @@ describe('Account', function() {
     emptyAcc = new Account();
     statementHeader = "date || credit || debit || balance\n";
     statement = emptyAcc.statement();
-    expect(statement).toEqual(statementHeader);
+    expect(emptyAcc.statement()).toEqual(statementHeader);
   })
   it('can print statement for account with one transaction', function(){
     account.withdraw(250);
