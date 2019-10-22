@@ -27,11 +27,11 @@ describe('Account', function() {
   })
   it('can print statement for account with one transaction', function(){
     account.withdraw(250);
-    statementHeader = "date || credit || debit || balance";
+    statementHeader = "date || credit || debit || balance\n";
     statementBody = `${formattedDate} || || 250.00 || 2750.00`;
     str = `${statementHeader}${statementBody}`
-    str = str.replace(/\n/g, "");
-    statement = account.statement().replace(/\n/g, "");
+    // str = str.replace(/\n/g, "");
+    statement = account.statement();
     expect(statement).toEqual(str);
   })
   it('can print statement for account with two transactions', function(){
