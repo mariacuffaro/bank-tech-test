@@ -50,7 +50,7 @@ Statement->Transactions: prints list of
 ## Terminal instructions for downloading and running the app
 
 * git clone git@github.com:mariacuffaro/bank-tech-test.git
-* npm install
 * cd to project folder
+* npm install
 * open index.html to run the app
 * open SpecRunner.html to run the tests
