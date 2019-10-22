@@ -38,7 +38,7 @@ describe('Account', function() {
     account.withdraw(250);
     account.deposit(500);
     statementHeader = "date || credit || debit || balance\n";
-    statementBody = "22/10/2019 || || 250.00 || 2750.00\n22/10/2019 || 500.00 || || 3250.00";
+    statementBody = `${formattedDate} || || 250.00 || 2750.00\n${formattedDate} || 500.00 || || 3250.00`;
     str = `${statementHeader}${statementBody}`
     statement = account.statement();
     expect(statement).toEqual(str);
