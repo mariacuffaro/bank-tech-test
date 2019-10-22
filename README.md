@@ -23,8 +23,12 @@ date || credit || debit || balance
 ```
 
 ## Approach
+```
+I chose to create a Javascript application and used the Jasmine framework to test my code.
 
-Test Driving Code in the console...
+I started by creating a domain model I then used test driving in the console and TDD to create my code.
+
+Some example console interaction...
 
 acc = new Account(3000) - balance is 3000
 acc.deposit(500)
@@ -34,12 +38,13 @@ acc.balance() - balance is 3250
 acc.statement() - gets transactions from the account and prints t
 
 
+```
 ## Domain model
 
 ****
 ```sequence {theme="hand"}
-Account->Transaction: has array of
-Statement->Transaction: prints list of
+Account->Transactions: has array of
+Statement->Transactions: prints list of
 ```
 
 ## Terminal instructions for downloading and running the app
