@@ -1,8 +1,5 @@
 (function(exports) {
 
-  transactions = []
-  accBalance = 0;
-
   function Account(balance=0) {
     accBalance = balance;
     transactions = [];
