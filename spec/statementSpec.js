@@ -5,10 +5,6 @@ describe('Statement', function() {
     statement = new Statement(transactions)
     statementHeader = "date || credit || debit || balance\n";
   });
-
-  it('has a header', function() {
-    expect(statement.header).toEqual(statementHeader)
-  });
   it('renders the header only if there are no transactions', function() {
     expect(statement.render()).toEqual(statementHeader)
   });
