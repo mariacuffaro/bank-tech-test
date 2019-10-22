@@ -24,12 +24,8 @@
     transactions.push(transaction)
   };
   Account.prototype.statement = function() {
-    statementBody = '';
-    if (transactions.length == 0) { return `${statementHeader}` }
-    transactions.forEach(function (transaction) {
-        statementBody += `${transaction.render()}\n`;
-    });
-    return `${statementHeader}${statementBody.slice(0, -1)}`
+    statement = new Statement(transactions);
+    return statement.render();
   };
 
   exports.Account = Account

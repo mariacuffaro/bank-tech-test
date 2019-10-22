@@ -20,17 +20,15 @@ describe('Account', function() {
   });
   it('can print statement for account with no transactions', function(){
     emptyAcc = new Account();
-    statementHeader = "date || credit || debit || balance";
+    statementHeader = "date || credit || debit || balance\n";
     statement = emptyAcc.statement();
-    statement = statement.replace(/\n/g, "");
-    expect(statement).toEqual(statementHeader.replace(/\n/g, ""));
+    expect(statement).toEqual(statementHeader);
   })
   it('can print statement for account with one transaction', function(){
     account.withdraw(250);
     statementHeader = "date || credit || debit || balance\n";
     statementBody = `${formattedDate} || || 250.00 || 2750.00`;
     str = `${statementHeader}${statementBody}`
-    // str = str.replace(/\n/g, "");
     statement = account.statement();
     expect(statement).toEqual(str);
   })
@@ -38,7 +36,7 @@ describe('Account', function() {
     account.withdraw(250);
     account.deposit(500);
     statementHeader = "date || credit || debit || balance\n";
-    statementBody = `${formattedDate} || || 250.00 || 2750.00\n${formattedDate} || 500.00 || || 3250.00`;
+    statementBody = `${formattedDate} || 500.00 || || 3250.00\n${formattedDate} || || 250.00 || 2750.00`;
     str = `${statementHeader}${statementBody}`
     statement = account.statement();
     expect(statement).toEqual(str);
