@@ -2,15 +2,20 @@
 
   function Statement(transactions) {
     header = "date || credit || debit || balance\n";
-    _transactions = transactions
+    transArray = transactions
     body = '';
   };
+
     Statement.prototype.render = function(){
-      if (_transactions.length == 0){return header}
-      _transactions.reverse().forEach(function (transaction) {
+      if (transArray.length == 0){return header}
+      createStatementBody();
+      return `${header}${body.slice(0, -1)}`
+    };
+
+    function createStatementBody() {
+      transArray.reverse().forEach(function (transaction) {
           body += `${transaction.render()}\n`;
       });
-      return `${header}${body.slice(0, -1)}`
     };
 
   exports.Statement = Statement
