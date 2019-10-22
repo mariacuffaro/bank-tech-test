@@ -24,7 +24,6 @@
     transactions.push(transaction)
   };
   Account.prototype.statement = function() {
-    statementHeader = "date || credit || debit || balance\n";
     statementBody = '';
     if (transactions.length == 0) { return `${statementHeader}` }
     transactions.forEach(function (transaction) {
