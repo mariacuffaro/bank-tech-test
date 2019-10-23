@@ -35,8 +35,12 @@ acc.deposit(500)
 acc.balance() - balance is 3500
 acc.withdraw(250)
 acc.balance() - balance is 3250
-acc.statement() - gets transactions from the account and prints t
+acc.statement() - gets transactions from the account and prints to the console in reverse date order.
 
+"date || credit || debit || balance
+23/10/2019 || || 4000.00 || -750.00
+23/10/2019 || || 250.00 || 3250.00
+23/10/2019 || 500.00 || || 3500.00"
 
 ```
 ## Domain model
