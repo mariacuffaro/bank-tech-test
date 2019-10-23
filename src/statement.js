@@ -13,7 +13,7 @@
 
   function createStatementBody() {
     transArray.reverse().forEach(function (transaction) {
-      body += `${transaction.render()}\n`;
+      body += `${transaction.outputLine()}\n`;
     });
   };
 

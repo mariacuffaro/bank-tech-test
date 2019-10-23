@@ -18,13 +18,13 @@ describe('Transaction', function() {
     expect(transaction._balance).toEqual('2000.00');
   });
   it('calculates a transaction string for a deposit', function(){
-    transOutput = transaction.render();
+    transOutput = transaction.outputLine();
     expect(transOutput).toEqual('23/09/2019 || 250.00 || || 2000.00')
   });
   it('calculates a transaction string for a withdrawal', function(){
     let transDate = new Date('Sep 23 2019')
     anotherTrans = new Transaction('debit',500,transDate, 500);
-    transOutput = anotherTrans.render();
+    transOutput = anotherTrans.outputLine();
     expect(transOutput).toEqual('23/09/2019 || || 500.00 || 500.00')
   })
 
